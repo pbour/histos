@@ -23,7 +23,7 @@ A tool to quickly draw equi-width histograms on screen
               maximum value contained inside input; computed internally if not given
 
 ## Example
-       $ ./histos.pl -b 20 -s 10 data.csv
+       $ ./histos.pl -c 1 -d ' ' -b 20 -s 10 data.csv
 &nbsp;0 [5]&nbsp;&nbsp;: *<br/>
 &nbsp;1 [9]&nbsp;&nbsp;: *<br/>
 &nbsp;2 [10]&nbsp;: **<br/>
