@@ -2,7 +2,7 @@
 A tool to quickly draw histograms on screen
 
 ## Usage
-       $ ./histos.pl [OPTIONS] [FILE]
+       $ ./histos.pl [OPTION]... [FILE]
 
 ## Description
        No mandatory arguments besides input FILE
