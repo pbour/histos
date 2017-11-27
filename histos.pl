@@ -76,6 +76,10 @@ while ($line = <IN>)
     chomp($line);
     my $count = ($line-$minV)/$diff;
     my $bin = int($count/$extendBin);
+    if ($bin >= $numBins)
+    {
+        $bin = $numBins-1;
+    }
     $histo{$bin} = $histo{$bin}+1;
 }
 close(IN);
@@ -93,7 +97,7 @@ $maxCountDigits = length($maxCount);
 
 # Draw histogram.
 print "binID cardinality (scalled by $scale)\n";
-foreach my $b (0..$numBins)
+foreach my $b (0..$numBins-1)
 {
     my $count =  $histo{$b};
     for (0..($maxBinIdDigits-length($b)))
