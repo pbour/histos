@@ -1,5 +1,5 @@
 # histos
-A tool to quickly draw histograms on screen
+A tool to quickly draw equi-width histograms on screen
 
 ## Usage
        $ ./histos.pl [OPTION]... [FILE]
