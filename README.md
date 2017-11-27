@@ -1,10 +1,10 @@
 # histos
 A tool to quickly draw histograms on screen
 
-## USAGE
+## Usage
        histo.pl [OPTIONS] [FILE]
 
-## DESCRIPTION
+## Description
        No mandatory arguments besides input FILE
 
        -h
