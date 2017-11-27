@@ -127,20 +127,21 @@ $maxCountDigits = length($maxCount);
 
 
 # Draw histogram.
-print "binID cardinality (scalled by $scale)\n";
+#print "binID cardinality (scalled by $scale)\n";
 foreach my $b (0..$numBins-1)
 {
     my $count =  $histo{$b};
-    for (0..($maxBinIdDigits-length($b)))
-    {
-        print " ";
-    }
+    #for (0..($maxBinIdDigits-length($b)))
+    #{
+    #    print " ";
+    #}
     if ($count < 1)
     {
         $count = 0;
     }
     
-    print "$b [" . $count . "]";
+    #print "$b [" . $count . "]";
+    print "[" . $count . "]";
     for (0..($maxCountDigits-length($count)))
     {
         print " ";
