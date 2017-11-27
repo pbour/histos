@@ -24,8 +24,8 @@ A tool to quickly draw equi-width histograms on screen
 
 ## Example
        $ ./histos.pl -c 1 -d ' ' -b 20 -s 10 data.csv
-[5]    : *<br/>
-[9]    : *<br/>
+[5]|    : *<br/>
+[9]|    : *<br/>
 [10]   : **<br/>
 [30]   : ****<br/>
 [16]   : **<br/>
