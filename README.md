@@ -8,9 +8,13 @@ A tool to quickly draw equi-width histograms on screen
        No mandatory arguments besides input FILE
 
        -h
-              display help message and exit
+              display this help message and exit
+       -c
+              column to build the histogram; default value is 1
+       -d
+              spliting delimeter in quotes to define columns; by default is set to ','
        -b
-              number in bins used to partition the domain; default value is 10
+              number of bins to partition the domain; default value is 10
        -s
               display scale; default value is 1
        -m
