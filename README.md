@@ -17,3 +17,6 @@ A tool to quickly draw histograms on screen
               minimum value contained inside input; computed internally if not given
        -M
               maximum value contained inside input; computed internally if not given
+
+## License
+This work is licensed under MIT License.
