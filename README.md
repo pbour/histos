@@ -8,9 +8,13 @@ A tool to quickly draw equi-width histograms on screen
        No mandatory arguments besides input FILE
 
        -h
-              display help message and exit
+              display this help message and exit
+       -c
+              column to build the histogram; default value is 1
+       -d
+              spliting delimeter in quotes to define columns; by default is set to ','
        -b
-              number in bins used to partition the domain; default value is 10
+              number of bins to partition the domain; default value is 10
        -s
               display scale; default value is 1
        -m
@@ -19,7 +23,7 @@ A tool to quickly draw equi-width histograms on screen
               maximum value contained inside input; computed internally if not given
 
 ## Example
-       $ ./histos.pl -b 20 -s 10 data.csv
+       $ ./histos.pl -c 1 -d ' ' -b 20 -s 10 data.csv
 &nbsp;0 [5]&nbsp;&nbsp;: *<br/>
 &nbsp;1 [9]&nbsp;&nbsp;: *<br/>
 &nbsp;2 [10]&nbsp;: **<br/>
