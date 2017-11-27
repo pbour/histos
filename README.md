@@ -2,9 +2,7 @@
 A tool to quickly draw histograms on screen
 
 # USAGE
-       ```sh
        histo.pl [OPTIONS] [FILE]
-       ```
 
 # DESCRIPTION
        No mandatory arguments besides input FILE
