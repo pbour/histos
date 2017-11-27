@@ -17,6 +17,7 @@ my $column = 0;
 my $delimeter = ',';
 my @vals;
 my $line = "";
+my $lcounter = 0;
 getopts("hb:s:m:M:c:d:", \%options);
 
 
@@ -72,7 +73,13 @@ else
     while ($line = <IN>)
     {
         chomp($line);
+        $lcounter += 1;
         @vals = split($delimeter, $line);
+        if ($#vals < $column)
+        {
+            print "File is not properly formatted: line $lcounter contains less than " . ($column+1) . " columns or the column delimeter is not properly set.\n" ;
+            exit;
+        }
         $maxV = max($maxV, $vals[$column]);
         $minV = min($minV, $vals[$column]);
     }
@@ -87,10 +94,17 @@ $extendBin = 1/$numBins;
 # Normalize input.
 my $diff = $maxV-$minV;
 open(IN, $ARGV[0]) or die("Could not open file \"$ARGV[0]\".");
+$lcounter = 0;
 while ($line = <IN>)
 {
     chomp($line);
+    $lcounter += 1;
     @vals = split($delimeter, $line);
+    if ($#vals < $column)
+    {
+        print "File is not properly formatted: line $lcounter contains less than " . ($column+1) . " columns or the column delimeter is not properly set.\n" ;
+        exit;
+    }
     my $count = ($vals[$column]-$minV)/$diff;
     my $bin = int($count/$extendBin);
     if ($bin >= $numBins)
