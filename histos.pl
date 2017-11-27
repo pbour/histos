@@ -22,7 +22,7 @@ getopts("hb:s:m:M:c:d:", \%options);
 
 
 # Parse and check command line arguments.
-if (defined $options{h})
+if (defined $options{h} or $#ARGV < 0)
 {
     print "USAGE\n";
     print "       histo.pl [OPTION]... [FILE]\n\n";
