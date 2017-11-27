@@ -20,12 +20,6 @@ A tool to quickly draw histograms on screen
 
 ## Example
        $ ./histos.pl -b 20 -s 10 data.csv
-       <table cols = "3" align="right">
-              <tr>
-                     <td>0</td>
-                     <td>[5]</td>
-              </tr>
-       </table>
 &nbsp;0 [5]&nbsp;&nbsp;: *<br/>
 &nbsp;1 [9]&nbsp;&nbsp;: *<br/>
 &nbsp;2 [10]&nbsp;: **<br/>
