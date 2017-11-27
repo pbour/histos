@@ -20,7 +20,7 @@ A tool to quickly draw histograms on screen
 
 ## Example
        $ ./histos.pl -b 20 -s 10 data.csv
-  0 [5]   : *
+  0 [5]   : *\n
   1 [9]   : *
   2 [10]  : **
   3 [30]  : ****
