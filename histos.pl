@@ -20,7 +20,7 @@ getopts("hb:s:m:M:", \%options);
 if (defined $options{h})
 {
     print "USAGE\n";
-    print "       histo.pl [OPTIONS] [FILE]\n\n";
+    print "       histo.pl [OPTION]... [FILE]\n\n";
     print "DESCRIPTION\n";
     print "       No mandatory arguments besides input FILE\n\n";
     print "       -h\n";
