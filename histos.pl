@@ -13,7 +13,11 @@ my $numBins = 10;
 my $extendBin = 0;
 my $maxCountDigits = 0;
 my $scale = 1;
-getopts("hb:s:m:M:", \%options);
+my $column = 0;
+my $delimeter = ',';
+my @vals;
+my $line = "";
+getopts("hb:s:m:M:c:d:", \%options);
 
 
 # Parse and check command line arguments.
@@ -25,8 +29,12 @@ if (defined $options{h})
     print "       No mandatory arguments besides input FILE\n\n";
     print "       -h\n";
     print "              display this help message and exit\n";
+    print "       -c\n";
+    print "              column to build the histogram; default value is 1\n";
+    print "       -d\n";
+    print "              spliting delimeter in quotes to define columns; by default is set to ','\n";
     print "       -b\n";
-    print "              number in bins used to partition the domain; default value is 10\n";
+    print "              number of bins to partition the domain; default value is 10\n";
     print "       -s\n";
     print "              display scale; default value is 1\n";
     print "       -m\n";
@@ -34,6 +42,15 @@ if (defined $options{h})
     print "       -M\n";
     print "              maximum value contained inside input; computed internally if not given\n";
     exit;
+}
+if (defined $options{d})
+{
+    $delimeter = $options{d};
+}
+if (defined $options{c})
+{
+    $column = $options{c};
+    $column -= 1;
 }
 if (defined $options{b})
 {
@@ -52,12 +69,12 @@ else
 {
     # Compute min and max values if not given
     open(IN, $ARGV[0]) or die("Could not open file \"$ARGV[0]\".");
-    my $line = "";
     while ($line = <IN>)
     {
         chomp($line);
-        $maxV = max($maxV, $line);
-        $minV = min($minV, $line);
+        @vals = split($delimeter, $line);
+        $maxV = max($maxV, $vals[$column]);
+        $minV = min($minV, $vals[$column]);
     }
     close(IN);
 }
@@ -70,11 +87,11 @@ $extendBin = 1/$numBins;
 # Normalize input.
 my $diff = $maxV-$minV;
 open(IN, $ARGV[0]) or die("Could not open file \"$ARGV[0]\".");
-my $line = "";
 while ($line = <IN>)
 {
     chomp($line);
-    my $count = ($line-$minV)/$diff;
+    @vals = split($delimeter, $line);
+    my $count = ($vals[$column]-$minV)/$diff;
     my $bin = int($count/$extendBin);
     if ($bin >= $numBins)
     {
